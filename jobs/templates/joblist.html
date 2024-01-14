@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+Django Tech accelerates innovation through an unyielding approach to nearshore software development. The world’s most innovative technology teams choose Django Tech to help accelerate strategic innovation, fill a pressing technology gap, and hit mission-critical deadlines.
+
+{% if job_list %}
+
+<ul>
+  {% for job in job_list %}
+  <li>{{job.type_name}} <a href="/job/{{job.id}}" style="color:blue">{{job.job_name}}</a> {{job.city_name}}</li>
+  {% endfor %}
+</ul>
+
+{% else %}
+<p>No jobs are available</p>
+{% endif %}
+
+{% endblock %}
